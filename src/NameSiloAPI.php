@@ -147,7 +147,7 @@ class NameSiloAPI{
 		curl_setopt ($ch, CURLOPT_MAXREDIRS, 6);
 		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 		
-		$HTTPBodyresult = simplexml_load_string(curl_exec($ch));
+		$HTTPBodyresult = json_decode(curl_exec($ch));
 		$this->lastResult = $HTTPBodyresult;
 		$this->lastHTTP = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		curl_close($ch);
