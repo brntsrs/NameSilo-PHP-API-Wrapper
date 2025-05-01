@@ -134,7 +134,7 @@ class NameSiloAPI{
 		$this->lastEndpoint = $endpoint;
 		if(!$this->checkSetup()){return $this->returnBAD('setup');}
 
-		$url = $this->currURL.$endpoint."?version=1&type=xml&key=".$this->apikey.$additonalParams;
+		$url = $this->currURL.$endpoint."?version=1&type=json&key=".$this->apikey.$additonalParams;
 		$this->lastURL = $url;
 
 		$ch = curl_init();
